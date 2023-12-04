@@ -1,7 +1,4 @@
-import {Dimensions} from 'react-native';
 import {StyleSheet, Text, View} from 'react-native';
-
-const {height} = Dimensions.get('screen');
 
 type DescriptionPropType = {
   username: string;

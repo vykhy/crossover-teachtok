@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, {useCallback, useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 type Option = {
   id: string;
@@ -20,17 +20,6 @@ type Content = {
   image: string;
   options: Option[];
   user: User;
-};
-
-const initialContent: Content = {
-  type: '',
-  id: -1,
-  playlist: '',
-  description: '',
-  question: '',
-  image: '',
-  options: [],
-  user: {name: '', avatar: ''},
 };
 
 function useContent() {

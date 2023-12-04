@@ -1,7 +1,5 @@
-import {Dimensions} from 'react-native';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {useAppStateContext} from '../contexts/AppStateContext';
-import {formatDistance, formatDuration} from 'date-fns';
 
 function TopActions() {
   const {totalTimeSpent} = useAppStateContext();
