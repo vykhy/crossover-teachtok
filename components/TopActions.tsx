@@ -44,7 +44,7 @@ export default TopActions;
 
 const styles = StyleSheet.create({
   topIconsContainer: {
-    marginTop: 30,
+    marginTop: 25,
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 16,

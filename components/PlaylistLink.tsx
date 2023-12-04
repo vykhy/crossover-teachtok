@@ -24,13 +24,14 @@ export default PlaylistLink;
 const styles = StyleSheet.create({
   playlistContainer: {
     backgroundColor: '#161616',
-    height: (height / 20) * 1,
+    height: 'auto',
     width: '100%',
     position: 'absolute',
     bottom: 0,
     alignItems: 'center',
     paddingLeft: 15,
     flexDirection: 'row',
+    paddingVertical: 8,
   },
   playlistText: {
     fontSize: 14,

@@ -33,9 +33,9 @@ function AppStateContextProvider({children}) {
     const interval = setInterval(() => {
       if (appStateRef.current === 'active') {
         const elapsedTime = Date.now() - startTime;
-        setTotalTimeSpent(prevTotalTime => prevTotalTime + elapsedTime);
+        setTotalTimeSpent(prevTotalTime => prevTotalTime + elapsedTime / 1000);
         setStartTime(Date.now());
-      }
+      } else setStartTime(Date.now());
     }, 1000);
 
     return () => {
@@ -44,7 +44,7 @@ function AppStateContextProvider({children}) {
   }, [startTime]);
 
   const contextValue = {
-    totalTimeSpent: formatTime(totalTimeSpent / 1000),
+    totalTimeSpent: formatTime(totalTimeSpent),
   };
 
   return (

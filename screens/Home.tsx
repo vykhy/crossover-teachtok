@@ -4,7 +4,7 @@ import Post from '../components/Post';
 import {FlatList, SafeAreaView} from 'react-native';
 
 function Home() {
-  const {content, getNext} = useContent();
+  const {content, isLoading, getNext} = useContent();
   const renderPost = ({item}: {item: Content}) => {
     return <Post post={item} />;
   };
