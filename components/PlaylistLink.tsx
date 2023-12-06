@@ -12,7 +12,7 @@ function PlaylistLink({playlist}: PlaylistLinkPropType) {
     <View style={styles.playlistContainer}>
       <Image
         source={require('./../public/assets/icons/PlaylistIcon.png')}
-        style={{height: 20, width: 20}}
+        style={styles.playlistIcon}
       />
       <Text style={styles.playlistText}>Playlist • Unit 5: {playlist}</Text>
     </View>
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     flexDirection: 'row',
     paddingVertical: 8,
+    paddingBottom: 20,
   },
   playlistText: {
     fontSize: 14,
@@ -39,4 +40,5 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     paddingLeft: 10,
   },
+  playlistIcon: {height: 20, width: 20},
 });

@@ -5,35 +5,22 @@ function TopActions() {
   const {totalTimeSpent} = useAppStateContext();
   return (
     <View style={styles.topIconsContainer}>
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          width: 50,
-        }}>
+      <View style={styles.timeContainer}>
         <Image
           source={require('./../public/assets/icons/ClockIcon.png')}
-          style={{height: 25, width: 25}}
+          style={styles.timeIcon}
         />
-        <Text style={{color: '#ccc', fontSize: 15}}> {totalTimeSpent}</Text>
+        <Text style={styles.time}> {totalTimeSpent}</Text>
       </View>
-      <View style={{alignItems: 'center', width: 80}}>
+      <View style={styles.forYou}>
         <Text style={styles.topIconText}>For You</Text>
-        <View
-          style={{
-            backgroundColor: 'white',
-            borderRadius: 5,
-            height: 6,
-            width: '70%',
-            marginTop: 8,
-          }}></View>
+        <View style={styles.forYouUnderline}></View>
       </View>
       <View
         style={{justifyContent: 'center', alignItems: 'flex-end', width: 50}}>
         <Image
           source={require('./../public/assets/icons/SearchIcon.png')}
-          style={{height: 25, width: 25}}
+          style={styles.searchIcon}
         />
       </View>
     </View>
@@ -58,4 +45,21 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
   },
+  timeContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: 50,
+  },
+  timeIcon: {height: 25, width: 25},
+  time: {color: '#ccc', fontSize: 15},
+  forYou: {alignItems: 'center', width: 80},
+  forYouUnderline: {
+    backgroundColor: 'white',
+    borderRadius: 5,
+    height: 6,
+    width: '70%',
+    marginTop: 8,
+  },
+  searchIcon: {height: 25, width: 25},
 });

@@ -30,6 +30,23 @@ function AppStateContextProvider({children}) {
   };
 
   useEffect(() => {
+    const handleAppStateChange = nextAppState => {
+      const now = Date.now();
+      const elapsedTime = now - startTime;
+
+      if (appStateRef.current === 'active') {
+        // Update total time if app is active
+        setTotalTimeSpent(prevTotalTime => prevTotalTime + elapsedTime / 1000);
+      }
+
+      if (nextAppState === 'active') {
+        // Update start time when becomes active
+        setStartTime(now);
+      }
+
+      appStateRef.current = nextAppState;
+    };
+
     const interval = setInterval(() => {
       if (appStateRef.current === 'active') {
         const elapsedTime = Date.now() - startTime;
@@ -38,8 +55,10 @@ function AppStateContextProvider({children}) {
       } else setStartTime(Date.now());
     }, 1000);
 
+    const listener = AppState.addEventListener('change', handleAppStateChange);
     return () => {
       clearInterval(interval);
+      listener.remove();
     };
   }, [startTime]);
 

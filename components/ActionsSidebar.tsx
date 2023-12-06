@@ -21,14 +21,10 @@ function ActionsSidebar() {
     <View style={styles.bottomRightIconsContainer}>
       <Image
         source={require('./../public/assets/icons/PlusIcon.png')}
-        style={{width: 55, height: 60, marginBottom: 20}}
+        style={styles.avatarStyle}
       />
       {actionIcons.map((actionIcon: ImageSourcePropType, i: number) => (
-        <Image
-          source={actionIcon}
-          key={i}
-          style={{width: 50, height: 50, marginBottom: 20}}
-        />
+        <Image source={actionIcon} key={i} style={styles.iconStyle} />
       ))}
     </View>
   );
@@ -45,5 +41,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '10%',
     zIndex: 2,
+  },
+  iconStyle: {
+    width: 50,
+    height: 50,
+    marginBottom: 20,
+  },
+  avatarStyle: {
+    width: 55,
+    height: 60,
+    marginBottom: 20,
   },
 });
